@@ -21,14 +21,6 @@ html {
   font-size: 16px;
 }
 
-p,
-h4,
-h3,
-h2,
-h1,
-span {
-  transform: rotate(0.03deg);
-}
 
 
 
@@ -42,7 +34,7 @@ video {
 }
 
 .header {
-  width: 100%;
+  width: 100vw;
   height: 100px;
   position: fixed;
   display: flex;
@@ -65,7 +57,7 @@ video {
 
 
 .headerMenuPopUp {
-  width: 100%;
+  width: 100vw;
   height: 200px;
   top: -210px;
   position: absolute;
