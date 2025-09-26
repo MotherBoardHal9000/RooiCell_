@@ -1,0 +1,206 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+
+:root {
+  /* Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-green: #66f670;
+  --color-ytellow: #fee976;
+  --color-gray: #1b1e26;
+}
+
+
+
+
+
+html {
+  font-size: 16px;
+}
+
+p,
+h4,
+h3,
+h2,
+h1,
+span {
+  transform: rotate(0.03deg);
+}
+
+
+
+
+video {
+  position: fixed;
+  z-index: -9999;
+  aspect-ratio: 16/9;
+ 
+  
+}
+
+.header {
+  width: 100vw;
+  height: 100px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  z-index: 9000;
+  transition: all 0.8s;
+  opacity: 1;
+}
+
+.headerContents {
+  width: 85vw;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+
+.headerMenuPopUp {
+  width: 100vw;
+  height: 200px;
+  top: -210px;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0.1;
+  transition: all 1ms;
+  background-color: #ffffff;
+}
+
+.show {
+  visibility: visible;
+  transition: all 1ms;
+  opacity: 0;
+}
+
+.hide {
+  visibility: visible;
+  transition: all 0.1ms;
+  opacity: 0;
+  top: -210;
+}
+
+.header img {
+  width: 156px;
+  height: fit-content;
+}
+
+header nav {
+  width: 895px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.header nav ul{width: 100%; height: 100px; display: flex; justify-content: space-between; align-items: center; list-style: none; margin: 0px; z-index: 9000;}
+.header nav ul li{font-size: 1.2rem; }
+
+.headerNav li:hover {
+  color: red;
+}
+
+.otherWrap {
+  width: 160px;
+  height: 40px;
+  border: 1px solid white;
+}
+
+#rooiCell {
+  font-size: 16rem;
+  font-weight: 500;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  margin-left: 7%;
+  transition: all 0.8s;
+  opacity: 1;
+  z-index: 10;
+}
+
+#Cosmetics{
+  width: calc( 80% / 16 * 9 );
+  aspect-ratio: 16 / 9;
+  font-size: 13rem;
+  font-weight: 500;
+  color: white;
+  position: absolute;
+  margin-left: 7%;
+  bottom: -1350px;
+  opacity: 1;
+  line-height: 110%;
+  letter-spacing: -2.5%;
+  transition: all 0.2s;
+  z-index: 22;}
+
+
+
+  #Cosmetics_p{
+    font-size: 2rem;
+    letter-spacing: -2.5%;
+    font-family: 'Pretendard', sans-serif;
+    position: absolute;
+    left: 190px;
+    bottom: -1300px;
+    transition: all 0.2s;
+    z-index: -20;
+  }
+  
+/*section01*/
+.section01 {
+width: 100%;
+height: 1440px;
+position: relative;
+ 
+}
+
+
+.natureImg{
+  width: calc( 108% / 16 * 9 );
+  aspect-ratio: 16 / 9;
+  border-radius: 25px;
+  background-image: url(./img/nature_bg.jpg);
+  background-size: cover;
+  position: absolute;
+  right: 150px;
+  bottom: -1500px;
+  transform: translateY(0%);
+  z-index: 9;
+
+}
+
+
+
+
+
+/*section02*/
+.section02 {
+  min-width: 1920px;
+  max-width: 100vw;
+  height: 2072px;
+  
+}
+/*section03*/
+.section03 {
+  min-width: 1920px;
+  max-width: 100vw;
+  height: 2072px;
+
+}
+/*section04*/
+/*section05*/
+/*footer*/
+.footer {
+  min-width: 1920px;
+  max-width: 100vw;
+  height: 270px;
+  background-color: #000000;
+}
