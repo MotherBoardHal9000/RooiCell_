@@ -36,8 +36,10 @@ window.addEventListener("scroll", function () {
   console.log(window.scrollY);
   if (window.scrollY > window.screenTop) {
     header.style.opacity = 0;
-  } else if (window.scrollY > headerscrollNumber) {
+    onAnimate()
+  } else if (window.scrollY == headerscrollNumber) {
     header.style.opacity = 1;
+    offAnimate()
   }
 });
 
@@ -46,7 +48,7 @@ function onAnimate() {
     headerMenuPopUp.offsetTop +
     (yPos - headerMenuPopUp.offsetTop) * 0.09 +
     "px";
-  headerMenuPopUp.style.opacity = yPos / headerMenuPopUp.offsetTop + 0.5;
+  headerMenuPopUp.style.opacity = yPos / headerMenuPopUp.offsetTop + 0.9;
 
   window.requestAnimationFrame(onAnimate);
 }
@@ -66,21 +68,7 @@ function offAnimate() {
 //
 //
 //
-function centerElement(elementId) {
-  const element = document.getElementById(elementId);
-  const parent = element.parentElement;
 
-  if (
-    window.scrollY >
-    parent.offsetTop -
-      (document.documentElement.clientHeight - element.offsetHeight) / 2
-  ) {
-    element.style.position = "fixed";
-  } else {
-    element.style.position = "relative";
-    element.style.transform = "initial";
-  }
-}
 //
 //
 //
@@ -101,7 +89,7 @@ window.addEventListener("scroll", function (e) {
     rooiCell.style.display = `translateY(${
       rooiCellAppearEnds + window.scrollY
     }px)`;
-    rooiCell.style.opacity = (window.scrollY * rooiCellAppearTiming) / 500;
+    rooiCell.style.opacity = (window.scrollY * rooiCellAppearTiming) / 700;
   } else  {window.scrollY  / rooiCellAppearTiming;
 
  rooiCell.style.opacity = 1;
@@ -116,7 +104,6 @@ window.addEventListener("scroll", function (e) {
 
 window.addEventListener("scroll",function(addEventListener){
   let value = window.scrollY;
-  rooiCell.style.transform = `translateY(${value * 0}px)`
   Cosmetics.style.transform = `translateY(${value * -0.3}px)`
   Cosmetics_p.style.transform = `translateY(${value *-0.25}px)`
   //popIt.style.transform=`translateY(${value * 0.30}px)`
