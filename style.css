@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
-
+*{scroll-behavior: smooth;}
 
 :root {
   /* Colors */
@@ -13,6 +13,14 @@
   --color-gray: #1b1e26;
 }
 
+p,
+h4,
+h3,
+h2,
+h1,
+span {
+  transform: rotate(0.03deg);
+}
 
 
 
@@ -21,7 +29,46 @@ html {
   font-size: 16px;
 }
 
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: difference;
+  transition: all 0.1s;
+  z-index: 9999;
+  pointer-events: none;
+}
 
+.cursor--active .cursor__trace__inner {
+  transform: scale(20);
+  transition: all 0.25s;
+  animation-duration: 0.25s;
+}
+
+.cursor_default_inner {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(255, 137, 137);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: all 0.25s;
+}
+
+.cursor_Trace_Inner {
+  position: absolute;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color:  rgb(255, 137, 137);
+  transform: translate(-50%, -50%);
+  transition: all 0.25s;
+  opacity: 0.5;
+}
 
 
 
@@ -54,6 +101,8 @@ video {
 
 }
 
+
+.header button { background: transparent; color: #ffffff; border: none; font-size: 1.5rem; font-weight: 100;}
 
 
 .headerMenuPopUp {
@@ -100,18 +149,28 @@ header nav {
   color: red;
 }
 
+
+
 .otherWrap {
   width: 160px;
   height: 40px;
-  border: 1px solid white;
+  border: none;
+  z-index: 9999;
 }
 
+
+.otherWrap button{cursor: pointer;}
+
+
+.hamberger{width: 50px; height: 50px;}
+
+
 #rooiCell {
-  font-size: 16rem;
+  font-size: 17rem;
   font-weight: 500;
   color: white;
   position: absolute;
-  bottom: 80px;
+  bottom: 70px;
   margin-left: 7%;
   transition: all 0.8s;
   opacity: 1;
@@ -138,6 +197,7 @@ header nav {
   #Cosmetics_p{
     font-size: 2rem;
     letter-spacing: -2.5%;
+    line-height: 60px;
     font-family: 'Pretendard', sans-serif;
     position: absolute;
     left: 190px;
@@ -153,8 +213,6 @@ height: 1440px;
 position: relative;
  
 }
-
-
 .natureImg{
   width: calc( 108% / 16 * 9 );
   aspect-ratio: 16 / 9;
@@ -166,7 +224,6 @@ position: relative;
   bottom: -1500px;
   transform: translateY(0%);
   z-index: 9;
-
 }
 
 
@@ -177,20 +234,60 @@ position: relative;
 .section02 {
   min-width: 1920px;
   height: 2072px;
-  
 }
 /*section03*/
 .section03 {
   min-width: 1920px;
   height: 2072px;
-
+  position: relative;
+  border: 1px solid red;
 }
+#proDuct{
+  width: calc( 80% / 16 * 9 );
+  aspect-ratio: 16 / 9;
+  font-size: 12rem;
+  font-weight: 500;
+  color: white;
+  position: absolute;
+  right: 8%;
+  top: 250px;
+  opacity: 1;
+  line-height: 110%;
+  letter-spacing: -2.5%;
+  transition: all 0.5s;
+  z-index: 23;}
+
+ 
+
+  #proDuct_p{
+    font-size: 2rem;
+    letter-spacing: -2.5%;
+    line-height: 60px;
+    font-family: 'Pretendard', sans-serif;
+    position: absolute;
+    left: 190px;
+    top: 330px;
+    transition: all 0.2s;
+    z-index: -20;
+
+   
+  }
+  
+
+
 /*section04*/
+.section04{
+  min-width: 1920px;
+  height: 2072px;
+  position: relative;
+  border: 1px solid red;}
+
+
 /*section05*/
 /*footer*/
 .footer {
   min-width: 1920px;
   max-width: 100vw;
   height: 270px;
-  background-color: #000000;
+  background-color: #111111;
 }

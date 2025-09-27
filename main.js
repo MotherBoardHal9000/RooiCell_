@@ -1,3 +1,28 @@
+window.addEventListener("mousemove", function (addEventListener) {
+  const cursorDefaultInner = document.querySelector(".cursor_default_inner");
+  const cursorTraceInner = document.querySelector(".cursor_Trace_Inner");
+  cursorDefaultInner.style.top = addEventListener.clientY + "px";
+  cursorDefaultInner.style.left = addEventListener.clientX + "px";
+  cursorTraceInner.style.top = addEventListener.clientY + "px";
+  cursorTraceInner.style.left = addEventListener.clientX + "px";
+  window.cursorAnimate(cursorDefaultInner);
+  window.cursorAnimateII(cursorTraceInner);
+});
+
+
+const smoothPointer = {
+  x: window.innerWidth / 2,
+  y: window.innerHeight / 2,
+};
+window.addEventListener("mousemove", (event) => {
+  gsap.to(smoothPointer, {
+    x: event.clientX,
+    y: event.clientY,
+    duration: 1.1,
+  });
+});
+
+
 let yPos = 0;
 let header = document.querySelector(".header");
 let headerMenuPopUp = document.querySelector(".headerMenuPopUp");
@@ -36,10 +61,10 @@ window.addEventListener("scroll", function () {
   console.log(window.scrollY);
   if (window.scrollY > window.screenTop) {
     header.style.opacity = 0;
-    onAnimate()
+    onAnimate(header)
   } else if (window.scrollY == headerscrollNumber) {
     header.style.opacity = 1;
-    offAnimate()
+    offAnimate(headerMenuPopUp)
   }
 });
 
@@ -61,6 +86,21 @@ function offAnimate() {
     headerMenuPopUp.style.opacity = 0.5 / headerMenuPopUp.offsetTop - yPos;
   window.requestAnimationFrame(offAnimate);
 }
+
+
+function cursorAnimate(){const cursorDefaultInner = document.querySelector(".cursor_default_inner");
+cursorDefaultInner.style.top = addEventListener.clientY + "px";
+  cursorDefaultInner.style.left = addEventListener.clientX + "px";
+  window.requestAnimationFrame(cursorAnimate);
+}
+
+
+function cursorAnimateII(){const cursorTraceInner = document.querySelector(".cursor_Trace_Inner");;
+cursorTraceInner.style.top = addEventListener.clientY + "px";
+  cursorTraceInner.style.left = addEventListener.clientX + "px";
+  window.requestAnimationFrame(cursorAnimateII);
+}
+
 //
 //
 //
@@ -81,6 +121,7 @@ const rooiCellAppearEnds = 0;
 const rooiCell = document.getElementById("rooiCell");
 const Cosmetics = document.getElementById('Cosmetics');
 const Cosmetics_p = document.getElementById('Cosmetics_p');
+const proDuct = document.getElementById("proDuct");
 const backGroundVideo = document.getElementById("backGroundVideoContnents");
 
 window.addEventListener("scroll", function (e) {
@@ -106,7 +147,7 @@ window.addEventListener("scroll",function(addEventListener){
   let value = window.scrollY;
   Cosmetics.style.transform = `translateY(${value * -0.3}px)`
   Cosmetics_p.style.transform = `translateY(${value *-0.25}px)`
-  //popIt.style.transform=`translateY(${value * 0.30}px)`
+  proDuct.style.transform=`translateY(${value * -0.09}px)`
   //sPonge.style.transform = `translateY(${value * 0.10}px)`
   //Brick.style.transform = `translateY(${value * 0.10}px)`
   //Fluid.style.transform = `translateY(${value * 0.15}px)`
@@ -114,4 +155,6 @@ window.addEventListener("scroll",function(addEventListener){
   console.log("scroll");
   
 })
+
+
 
